@@ -9,7 +9,7 @@ use Laravel\Sanctum\HasApiTokens;
 class License extends Model
 {
     /** @use HasFactory<\Database\Factories\LicenseFactory> */
-    use HasFactory;
+    use HasFactory, HasApiTokens;
 
     protected $fillable = [
         'first_name',
