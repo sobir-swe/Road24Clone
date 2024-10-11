@@ -9,4 +9,12 @@ class Fine extends Model
 {
     /** @use HasFactory<\Database\Factories\FineFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'plate_number',
+        'amount',
+        'type',
+        'car_id'
+    ];
+
 }
