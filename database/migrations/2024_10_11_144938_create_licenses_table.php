@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->date('date_of_birth')->nullable();
             $table->string('passport')->nullable();
-            $table->integer('chat_id')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->unsignedBigInteger('chat_id')->nullable();
             $table->timestamps();
         });
     }
