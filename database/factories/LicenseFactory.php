@@ -17,7 +17,11 @@ class LicenseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'first_name' => $this->faker->firstName(),
+            'last_name' => $this->faker->lastName(),
+            'date_of_birth' => $this->faker->date(),
+            'passport' => $this->faker->randomNumber(),
+            'chat_id' => $this->faker->randomNumber(),
         ];
     }
 }

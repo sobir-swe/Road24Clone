@@ -9,4 +9,17 @@ class Car extends Model
 {
     /** @use HasFactory<\Database\Factories\CarFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'model',
+        'color',
+        'year',
+        'plate_number',
+        'owner_id',
+    ];
+
+    public function owner(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(License::class, 'owner_id');
+    }
 }
