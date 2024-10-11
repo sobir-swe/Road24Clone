@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\CarResource;
+use App\MoonShine\Resources\FineResource;
+use App\MoonShine\Resources\LicenseResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -49,6 +52,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new MoonShineUserRoleResource()
                 ),
             ]),
+
+            MenuItem::make('Profile', new LicenseResource()),
+            MenuItem::make('My cars', new CarResource()),
+            MenuItem::make('My fines', new FineResource()),
 
             MenuItem::make('Documentation', 'https://moonshine-laravel.com/docs')
                 ->badge(fn() => 'Check')
